@@ -1,0 +1,74 @@
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>My first website</title>
+  </head>
+  <style>
+    ul.top {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      position: sticky;
+      top: 0;
+    }
+    ul.siteUpper   {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 15%;
+      background-color: #f1f1f1;
+      height: 100%;
+      position: fixed;
+      overflow: auto;
+    }
+    li.site {
+      text-align: left;
+      border-bottom: 1px solid #555;
+      display: inline;
+    }
+    li.site:last-child {
+      border-bottom: none;
+    }
+    li.site a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    li.site a:hover {
+      background-color: #555;
+      color: white;
+    }
+    li.site a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+
+  </head>
+  <body>
+    <nav style="border-radius:0px;">
+      <ul class="top">
+        <li>
+          <h1 style="text-align: center">Velkommen til min første hjemmeside</h1>
+        </li>
+      </ul>
+      <ul class="siteUpper">
+        <li class="site"><a href="{% url 'home' %}">Home</a></li>
+        <li class="site"><a href="{% url 'news' %}">News</a></li>
+        <li class="site"><a href="{% url 'contact' %}">Contact</a></li>
+        <li class="site"><a href="{% url 'about' %}">About</a></li>
+      </ul>
+    </nav>
+    <h1>{% block content %}{% endblock content %}</h1>
+  </body>
+</html>
