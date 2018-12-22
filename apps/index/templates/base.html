@@ -10,64 +10,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>My first website</title>
   </head>
-  <style>
-    ul.top {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #f1f1f1;
-      position: sticky;
-      top: 0;
-    }
-    ul.siteUpper   {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 15%;
-      background-color: #f1f1f1;
-      height: 100%;
-      position: fixed;
-      overflow: auto;
-    }
-    li.site {
-      text-align: left;
-      border-bottom: 1px solid #555;
-      display: inline;
-    }
-    li.site:last-child {
-      border-bottom: none;
-    }
-    li.site a {
-      display: block;
-      color: #000;
-      padding: 8px 16px;
-      text-decoration: none;
-    }
-    li.site a:hover {
-      background-color: #555;
-      color: white;
-    }
-    li.site a.active {
-      background-color: #4CAF50;
-      color: white;
-    }
   </style>
 
   </head>
   <body>
-    <nav style="border-radius:0px;">
-      <ul class="top">
-        <li>
-          <h1 style="text-align: center">Velkommen til min første hjemmeside</h1>
-        </li>
-      </ul>
-      <ul class="siteUpper">
-        <li class="site"><a href="{% url 'home' %}">Home</a></li>
-        <li class="site"><a href="{% url 'news' %}">News</a></li>
-        <li class="site"><a href="{% url 'contact' %}">Contact</a></li>
-        <li class="site"><a href="{% url 'about' %}">About</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'news' %}">News <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">Om <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Kontakt <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Søg" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
     </nav>
     <h1>{% block content %}{% endblock content %}</h1>
   </body>
