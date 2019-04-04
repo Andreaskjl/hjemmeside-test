@@ -7,7 +7,7 @@ def home(request):
 
 
 def about(request):
-    context = {'hej': 1}
+    context = {'name': 'Andreas'}
     return render(request, 'about.html', context)
 
 
